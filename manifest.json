@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Sentiment Analysis Extension",
+  "version": "1.0",
+  "description": "Analyze the sentiment of product reviews on web pages.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "extension/js/background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["extension/js/content.js"]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+
+}
